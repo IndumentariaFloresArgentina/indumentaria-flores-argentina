@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link de animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?
+    family=Poppins:wght@600;800&
+    family=Roboto:wght@300;400;500&
+    display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Indumentaria Flores Argentina</title>
+</head>
+
+<body>
+  <!-- script del slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+  <!-- script de las cards -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <header class="menu">
+    <div class="menu__logo">
+      <img src="img/logo.png" alt="">
+    </div>
+    <div class="menu__icon" id="menuIcon">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="menu__links" id="menuLinks">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="video-container">
+    <video autoplay muted loop>
+      <source src="video/6766762-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="video-text animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up"
+      data-aos-delay="200">
+      <h2>INDUMENTARIA FLORES <br> ARGENTINA</h2>
+      <p data-aos="fade-up" data-aos-delay="900">Somos una empresa dedicada a la venta de indumentaria, con una amplia
+        variedad de productos para todos los
+        gustos.
+        <br>
+        Nuestra misión es ofrecer a nuestros clientes una experiencia de compra excepcional y satisfactoria.
+      </p>
+      <a href="#" class="explore-button animate__animated animate__pulse animate__infinite" data-aos="zoom-in"
+        data-aos-delay="300">EXPLORAR</a>
+    </div>
+  </div>
+
+  <!-- SLIDER DE IMAGENES -->
+  <h1 class="somos-fabricantes" data-aos="fade-up" data-aos-delay="200">UN POCO DE NUESTRO TRABAJO</h1>
+
+  <section id="slider" class="container-slider" data-aos="fade-up" data-aos-delay="200">
+    <ul class="slider-wrapper">
+      <li class="current-slide">
+        <img src="img/1.webp" title="" alt="">
+
+        <div class="caption">
+          <h2 class="slider-title">Diseño web</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, placeat est. Alias illo hic quo nobis,
+            aspernatur iste ut voluptate.</p>
+        </div>
+      </li>
+
+      <li>
+        <img src="img/2.webp" title="" alt="">
+
+        <div class="caption">
+          <h2 class="slider-title">Diseño Responsive</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iusto placeat aliquid tempore harum,
+            similique!</p>
+        </div>
+      </li>
+
+      <li>
+        <img src="img/3.webp" title="" alt="">
+
+        <div class="caption">
+          <h2 class="slider-title">Identidad Corporativa</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima!
+            Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!</p>
+        </div>
+      </li>
+
+      <li>
+        <img src="img/4.webp" title="" alt="">
+
+        <div class="caption">
+          <h2 class="slider-title">Desarrollo Web</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
+        </div>
+      </li>
+      <li>
+        <img src="img/13.webp" title="" alt="">
+
+        <div class="caption">
+          <h2 class="slider-title">Desarrollo Web</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
+        </div>
+      </li>
+    </ul>
+    <!-- Sombras -->
+    <div class="slider-shadow"></div>
+
+    <!-- Controles de Navegacion -->
+    <ul id="control-buttons" class="control-buttons"></ul>
+  </section>
+
+  <!-- GALERIA -->
+  <h1 class="somos-fabricantes" data-aos="fade-up" data-aos-delay="200">SOMOS FABRICANTES</h1>
+  <p class="parrafo-somos" data-aos="fade-up" data-aos-delay="200">Somos una empresa dedicada a la venta de
+    indumentaria, con una amplia variedad de productos
+    para todos los gustos.
+    <br>
+    Nuestra misión es ofrecer a nuestros clientes una experiencia de compra excepcional y satisfactoria.
+  </p>
+
+  <div id="app" class="container">
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h1 slot="header">Pijamas Luminosos nenas</h1>
+      <p slot="content"><a href="luminosos.html">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/5710040/pexels-photo-5710040.jpeg">
+      <h1 slot="header">Pijamas Luminosos nenes</h1>
+      <p slot="content"><a href="">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/19845036/pexels-photo-19845036/free-photo-of-moda-hombre-modelo-maqueta.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+      <h1 slot="header">Polar soft estampado</h1>
+      <p slot="content"><a href="polarSoftEstampado.html">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/16996623/pexels-photo-16996623/free-photo-of-hombre-gafas-de-sol-calle-modelo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+      <h1 slot="header">Chombas ralladas</h1>
+      <p slot="content"><a href="chombasRalladasAdulto.html">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/6545637/pexels-photo-6545637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+      <h1 slot="header">Canyons</h1>
+      <p slot="content"><a href="">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/2060241/pexels-photo-2060241.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h1 slot="header">Beaches</h1>
+      <p slot="content"><a href="">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/1306246/pexels-photo-1306246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+      <h1 slot="header">Trees</h1>
+      <p slot="content"><a href="">VER</a></p>
+    </card>
+    <card data-aos="fade-up" data-aos-delay="200"
+      data-image="https://images.pexels.com/photos/4937449/pexels-photo-4937449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+      <h1 slot="header">Lakes</h1>
+      <p slot="content"><a href="">VER</a></p>
+    </card>
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+
+
+</body>
+
+</html>

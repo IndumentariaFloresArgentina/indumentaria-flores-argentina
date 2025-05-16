@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+/*NAVBAR*/
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu__logo img {
+    height: 75px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.menu__icon {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    z-index: 1001;
+}
+
+.menu__icon span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.menu__icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu__icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu__icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu__links.active {
+    right: 0;
+}
+
+.menu__links ul {
+    list-style: none;
+    text-align: center;
+}
+
+.menu__links li {
+    margin: 20px 0;
+}
+
+.menu__links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu__links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffde59;
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu__links a:hover::after {
+    width: 100%;
+}
