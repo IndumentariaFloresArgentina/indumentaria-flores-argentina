@@ -163,6 +163,7 @@ body {
     font-size: 18px;
     color: white;
     text-align: center;
+    font-weight: 600;
 }
 .explore-button {
     display: inline-block;
@@ -360,9 +361,6 @@ body {
  		height: 200px;
  	}
 	
- 	.slider-wrapper .caption {
- 		display: none;
- 	}
 
  }
 
@@ -496,41 +494,54 @@ p + p {
     
 
     .video-text {
-        bottom: 20px;
+        bottom: 350px;
         left: 20px;
         right: 20px;
         text-align: center;
     }
 
     .video-text h2 {
-        font-size: 28px;
+        font-size: 32px;
+        font-weight: 900;
     }
 
     .video-text p {
-        font-size: 16px;
+        font-size: 20px;
         max-width: 100%;
         margin: 10px auto 0;
     }
 
-    .explore-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
     .somos-fabricantes {
         font-size: 28px;
     }
 }
 @media (max-width: 480px) {
     .video-text h2 {
-        font-size: 22px;
+        font-size: 32px;
+        font-weight: 900;
     }
 
     .video-text p {
-        font-size: 14px;
+        font-size: 20px;
     }
 
-    .explore-button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
+    
+}
+/* estado por defecto: abajo y transparente */
+.slider-wrapper .caption {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* override para móvil: aseguramos que sea block */
+@media only screen and (max-width: 535px) {
+  .slider-wrapper .caption {
+    display: block !important;
+  }
+  /* cuando el <li> tenga esta clase, el caption sube y se ve */
+  .slider-wrapper li.show-caption .caption {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
 }

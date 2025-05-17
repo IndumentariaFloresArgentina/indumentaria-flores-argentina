@@ -182,3 +182,13 @@ $(function () {
 
   SliderModule.init({ duration: 4000 });
 });
+
+// Mostrar/ocultar caption al hacer click
+$('#slider .slider-wrapper li').on('click', function(e){
+  e.stopPropagation();
+  var $me = $(this);
+  // quita la clase en los demás
+  $('#slider .slider-wrapper li').not($me).removeClass('show-caption');
+  // alterna en el actual
+  $me.toggleClass('show-caption');
+});
