@@ -192,3 +192,18 @@ $('#slider .slider-wrapper li').on('click', function(e){
   // alterna en el actual
   $me.toggleClass('show-caption');
 });
+
+
+// FOOTER
+
+// SCROLL TO TOP
+document.getElementById('scrollTopBtn').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Pequeño aviso de "enviado" en el newsletter (simulación)
+document.getElementById('newsletter-form').addEventListener('submit', e => {
+  e.preventDefault();
+  alert('¡Gracias por suscribirte!');
+  e.target.reset();
+});
