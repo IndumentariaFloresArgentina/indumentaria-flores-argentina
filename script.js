@@ -8,6 +8,63 @@ const menuIcon = document.getElementById('menuIcon');
 
 Vue.config.devtools = true;
 
+// texto animation
+class Typewriter {
+  constructor(selector, words, { typingSpeed = 100, deletingSpeed = 50, pause = 2000 } = {}) {
+    this.el       = document.querySelector(selector);
+    this.words    = words;
+    this.typingSpeed  = typingSpeed;
+    this.deletingSpeed= deletingSpeed;
+    this.pause       = pause;
+    this.wordIndex   = 0;
+    this.charIndex   = 0;
+    this.isDeleting  = false;
+  }
+
+  async start() {
+    while (true) {
+      const current = this.words[this.wordIndex];
+      if (!this.isDeleting) {
+        this.el.textContent = current.slice(0, ++this.charIndex);
+        if (this.charIndex === current.length) {
+          this.isDeleting = true;
+          await this._wait(this.pause);
+        }
+      } else {
+        this.el.textContent = current.slice(0, --this.charIndex);
+        if (this.charIndex === 0) {
+          this.isDeleting = false;
+          this.wordIndex = (this.wordIndex + 1) % this.words.length;
+          await this._wait(500);
+        }
+      }
+      await this._wait(this.isDeleting ? this.deletingSpeed : this.typingSpeed);
+    }
+  }
+
+  _wait(ms) {
+    return new Promise(res => setTimeout(res, ms));
+  }
+}
+
+// 📌 Configura tus frases aquí:
+const frases = [
+  "dedicada a la venta de indumentaria,",
+  "con mas de 25 años de experiencia,",
+  "envío rápido y seguro a todo el país,",
+  "atención personalizada 24/7,"
+];
+
+// Arranca tras 1 s para no chocar con AOS
+setTimeout(() => {
+  new Typewriter('#typing-text', frases, {
+    typingSpeed: 120,
+    deletingSpeed: 60,
+    pause: 2000
+  }).start();
+}, 1000);
+
+
 Vue.component("card", {
   template: `
     <div class="card-wrap"
@@ -207,3 +264,5 @@ document.getElementById('newsletter-form').addEventListener('submit', e => {
   alert('¡Gracias por suscribirte!');
   e.target.reset();
 });
+
+

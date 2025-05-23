@@ -161,8 +161,40 @@ body {
 
 .video-text p {
   font-size: 18px;
-  max-width: 500px;
+  max-width: 600px;
   margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* texto animado */
+/* Estilo tipográfico y cursor */
+/* texto animado: sin recortes, fluye completo */
+.typing-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  display: inline-block;    /* inline-block para medir ancho automático */
+  white-space: normal;      /* deja que se rompa la línea si es necesario */
+  overflow: visible;        /* nada se oculta */
+  width: auto;              /* ancho según el contenido */
+  max-width: none;          /* quita límite de ancho */
+  vertical-align: bottom;
+  color: #00c5b9;
+}
+
+/* Cursor parpadeante */
+.typing-text::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  background-color: currentColor;
+  animation: blink-cursor 0.7s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .somos-fabricantes {
@@ -471,6 +503,9 @@ p+p {
   background-size: cover;
   transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   pointer-events: none;
+}
+.card-bg {
+  box-sizing: content-box;  /* ← le devolvemos el modelo de cajas “legacy” */
 }
 
 .card-info {
